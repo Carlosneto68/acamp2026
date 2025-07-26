@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamados Para Mais | Acampamento 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background-color: #0a3d91;
+            color: white;
+        }
+        
+        .title-font {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0a3d91 0%, #072a66 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: #ffde59;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        
+        .star-1 {
+            width: 40px;
+            height: 40px;
+            top: 15%;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .star-2 {
+            width: 25px;
+            height: 25px;
+            top: 30%;
+            right: 15%;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .star-3 {
+            width: 35px;
+            height: 35px;
+            bottom: 20%;
+            left: 20%;
+            animation: float 7s ease-in-out infinite;
+        }
+        
+        .star-4 {
+            width: 20px;
+            height: 20px;
+            bottom: 30%;
+            right: 10%;
+            animation: float 9s ease-in-out infinite;
+        }
+        
+        .scribble {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 0.5;
+        }
+        
+        .scribble-1 {
+            top: 10%;
+            right: 5%;
+            transform: rotate(45deg);
+        }
+        
+        .scribble-2 {
+            bottom: 15%;
+            left: 5%;
+            transform: rotate(-15deg);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #ff3e3e 0%, #ff7a00 100%);
+            transition: all 0.3s ease;
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(255, 62, 62, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 62, 62, 0.6);
+        }
+        
+        .secondary-button {
+            background: linear-gradient(135deg, #ffde59 0%, #ff7a00 100%);
+            transition: all 0.3s ease;
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(255, 222, 89, 0.4);
+        }
+        
+        .secondary-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 222, 89, 0.6);
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .faq-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .limited-badge {
+            background: #ff3e3e;
+            transform: rotate(-15deg);
+            box-shadow: 0 4px 15px rgba(255, 62, 62, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: rotate(-15deg) scale(1);
+            }
+            50% {
+                transform: rotate(-15deg) scale(1.05);
+            }
+            100% {
+                transform: rotate(-15deg) scale(1);
+            }
+        }
+        
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .arrow-animation {
+            animation: moveArrow 1.5s infinite;
+        }
+        
+        @keyframes moveArrow {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        .donkey-illustration {
+            position: absolute;
+            bottom: -20px;
+            right: 5%;
+            width: 180px;
+            height: 180px;
+            z-index: 1;
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .donkey-illustration {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-opacity-90 bg-blue-900 backdrop-blur-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="title-font text-2xl font-bold text-white">CASA JOVEM</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#sobre" class="text-white hover:text-yellow-300 transition">Sobre</a>
+                <a href="#atividades" class="text-white hover:text-yellow-300 transition">Atividades</a>
+                <a href="#depoimentos" class="text-white hover:text-yellow-300 transition">Depoimentos</a>
+                <a href="#faq" class="text-white hover:text-yellow-300 transition">FAQ</a>
+            </div>
+            <a href="#inscricao" class="secondary-button px-4 py-2 rounded-full text-black font-bold text-sm">Inscreva-se</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg min-h-screen pt-24 pb-16 px-4 flex items-center relative">
+        <!-- Decorative elements -->
+        <div class="star star-1"></div>
+        <div class="star star-2"></div>
+        <div class="star star-3"></div>
+        <div class="star star-4"></div>
+        
+        <svg class="scribble scribble-1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10,50 Q30,30 50,50 T90,50" stroke="#ffde59" stroke-width="3" fill="none" />
+        </svg>
+        
+        <svg class="scribble scribble-2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10,30 Q50,10 50,50 T90,70" stroke="#ff7a00" stroke-width="3" fill="none" />
+        </svg>
+        
+        <!-- SVG Donkey Illustration -->
+        <svg class="donkey-illustration" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100,50 Q120,30 140,50 T180,50" stroke="#888" stroke-width="8" fill="none" />
+            <ellipse cx="100" cy="120" rx="40" ry="30" fill="#aaa" />
+            <ellipse cx="90" cy="80" rx="25" ry="20" fill="#aaa" />
+            <rect x="85" y="140" width="8" height="40" fill="#aaa" />
+            <rect x="105" y="140" width="8" height="40" fill="#aaa" />
+            <rect x="65" y="140" width="8" height="35" fill="#aaa" />
+            <rect x="125" y="140" width="8" height="35" fill="#aaa" />
+            <ellipse cx="80" cy="75" rx="5" ry="5" fill="black" />
+            <ellipse cx="100" cy="75" rx="5" ry="5" fill="black" />
+            <path d="M85,90 Q90,95 95,90" stroke="black" stroke-width="2" fill="none" />
+            <path d="M70,60 L85,70" stroke="#aaa" stroke-width="8" fill="none" />
+            <path d="M110,70 L125,60" stroke="#aaa" stroke-width="8" fill="none" />
+        </svg>
+        
+        <div class="container mx-auto relative z-10">
+            <div class="max-w-3xl">
+                <div class="mb-6">
+                    <span class="bg-yellow-400 text-blue-900 px-4 py-1 rounded-full text-sm font-bold inline-block mb-4">14 a 16 de Fevereiro 2026</span>
+                </div>
+                <h1 class="title-font text-5xl md:text-7xl font-extrabold mb-4 text-white leading-tight">
+                    CHAMADOS <br><span class="text-yellow-400">PARA MAIS</span>
+                </h1>
+                <h2 class="text-xl md:text-2xl mb-6 text-white opacity-90">
+                    Acampamento 2026 | Presidente Epitácio - SP
+                </h2>
+                <p class="text-lg mb-8 text-white opacity-80 max-w-xl">
+                    Descubra o propósito de Deus para sua vida em três dias que podem transformar tudo. 
+                    Louvor, palavra, conexão e experiências que vão marcar a sua caminhada cristã. 
+                    <span class="font-bold">Você foi chamado para mais!</span>
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                    <a href="#inscricao" class="cta-button px-8 py-4 rounded-full text-white font-bold text-lg flex items-center justify-center">
+                        Quero me inscrever agora
+                        <svg class="w-5 h-5 ml-2 arrow-animation" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Countdown Timer -->
+                <div class="mt-8">
+                    <p class="text-white mb-3 font-medium">Contagem regressiva para o acampamento:</p>
+                    <div class="flex space-x-4">
+                        <div class="countdown-item p-3 text-center w-20">
+                            <div id="days" class="text-2xl font-bold">000</div>
+                            <div class="text-xs uppercase">Dias</div>
+                        </div>
+                        <div class="countdown-item p-3 text-center w-20">
+                            <div id="hours" class="text-2xl font-bold">00</div>
+                            <div class="text-xs uppercase">Horas</div>
+                        </div>
+                        <div class="countdown-item p-3 text-center w-20">
+                            <div id="minutes" class="text-2xl font-bold">00</div>
+                            <div class="text-xs uppercase">Min</div>
+                        </div>
+                        <div class="countdown-item p-3 text-center w-20">
+                            <div id="seconds" class="text-2xl font-bold">00</div>
+                            <div class="text-xs uppercase">Seg</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="atividades" class="py-20 px-4 bg-blue-800 relative">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-4xl md:text-5xl font-bold mb-4">O QUE TE ESPERA NO <span class="text-yellow-400">ACAMP 2026</span></h2>
+                <p class="text-lg max-w-2xl mx-auto opacity-80">Prepare-se para três dias intensos de conexão com Deus e com pessoas incríveis. Uma experiência que vai transformar sua vida!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card p-6">
+                    <div class="text-4xl mb-4">🔥</div>
+                    <h3 class="text-xl font-bold mb-2">Momentos de adoração intensos</h3>
+                    <p class="opacity-80">Experimente momentos poderosos de louvor e adoração que vão renovar sua fé e fortalecer sua conexão com Deus.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card p-6">
+                    <div class="text-4xl mb-4">📖</div>
+                    <h3 class="text-xl font-bold mb-2">Palavras impactantes</h3>
+                    <p class="opacity-80">Mensagens transformadoras que vão desafiar você a crescer espiritualmente e descobrir seu propósito em Cristo.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card p-6">
+                    <div class="text-4xl mb-4">🙌</div>
+                    <h3 class="text-xl font-bold mb-2">Dinâmicas em equipe</h3>
+                    <p class="opacity-80">Atividades divertidas que promovem a união, amizade e trabalho em equipe entre todos os participantes.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card p-6">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold mb-2">Missões diárias</h3>
+                    <p class="opacity-80">Desafios práticos que vão te ajudar a aplicar os ensinamentos e desenvolver sua fé de maneira prática.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card p-6">
+                    <div class="text-4xl mb-4">🛏️</div>
+                    <h3 class="text-xl font-bold mb-2">Hospedagem e alimentação inclusas</h3>
+                    <p class="opacity-80">Tudo pensado com carinho para que você tenha uma experiência completa e confortável durante todo o acampamento.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card p-6">
+                    <div class="text-4xl mb-4">🎉</div>
+                    <h3 class="text-xl font-bold mb-2">Atividades e gincanas</h3>
+                    <p class="opacity-80">Momentos de diversão e competição saudável que vão tornar essa experiência ainda mais memorável.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="py-20 px-4 bg-blue-900 relative">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-4xl md:text-5xl font-bold mb-4">VIDAS <span class="text-yellow-400">TRANSFORMADAS</span></h2>
+                <p class="text-lg max-w-2xl mx-auto opacity-80">Veja o que os participantes das edições anteriores têm a dizer sobre essa experiência incrível.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-6 relative">
+                    <svg class="absolute top-4 left-4 w-8 h-8 text-yellow-400 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
+                    <div class="pt-8">
+                        <p class="mb-4 italic">"Foi no acamp que eu entendi meu propósito. Nunca mais fui o mesmo depois daqueles três dias!"</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-blue-900 font-bold">M</div>
+                            <div class="ml-3">
+                                <p class="font-bold">Mateus, 19</p>
+                                <p class="text-sm opacity-70">Participou em 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-6 relative">
+                    <svg class="absolute top-4 left-4 w-8 h-8 text-yellow-400 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
+                    <div class="pt-8">
+                        <p class="mb-4 italic">"Nunca imaginei que três dias pudessem me marcar tanto. Fiz amizades que vão durar para sempre!"</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-blue-900 font-bold">J</div>
+                            <div class="ml-3">
+                                <p class="font-bold">Julia, 17</p>
+                                <p class="text-sm opacity-70">Participou em 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-6 relative">
+                    <svg class="absolute top-4 left-4 w-8 h-8 text-yellow-400 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
+                    <div class="pt-8">
+                        <p class="mb-4 italic">"O acamp mudou minha visão sobre Deus e sobre mim mesmo. Recomendo para todos os jovens!"</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-blue-900 font-bold">G</div>
+                            <div class="ml-3">
+                                <p class="font-bold">Gabriel, 21</p>
+                                <p class="text-sm opacity-70">Participou em 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photo Gallery -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold mb-6 text-center">Momentos Inesquecíveis</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Using colored rectangles as placeholders for images -->
+                    <div class="aspect-square bg-gradient-to-br from-blue-700 to-blue-500 rounded-lg overflow-hidden flex items-center justify-center">
+                        <span class="text-4xl">🙏</span>
+                    </div>
+                    <div class="aspect-square bg-gradient-to-br from-yellow-500 to-yellow-300 rounded-lg overflow-hidden flex items-center justify-center">
+                        <span class="text-4xl">🎸</span>
+                    </div>
+                    <div class="aspect-square bg-gradient-to-br from-red-600 to-red-400 rounded-lg overflow-hidden flex items-center justify-center">
+                        <span class="text-4xl">🔥</span>
+                    </div>
+                    <div class="aspect-square bg-gradient-to-br from-pink-500 to-pink-300 rounded-lg overflow-hidden flex items-center justify-center">
+                        <span class="text-4xl">✨</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="inscricao" class="py-20 px-4 bg-blue-800 relative">
+        <div class="container mx-auto">
+            <div class="max-w-3xl mx-auto bg-blue-700 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                <!-- Limited Badge -->
+                <div class="limited-badge absolute top-6 right-6 px-4 py-2 rounded-full text-white font-bold text-sm z-10">
+                    Vagas Limitadas!
+                </div>
+                
+                <div class="text-center mb-8">
+                    <h2 class="title-font text-4xl md:text-5xl font-bold mb-4">GARANTA SUA <span class="text-yellow-400">VAGA</span></h2>
+                    <p class="text-lg max-w-xl mx-auto opacity-80">As inscrições estão abertas e as vagas costumam acabar rápido. Garanta seu lugar agora e venha viver o que Deus tem preparado para você!</p>
+                </div>
+                
+                <div class="bg-blue-600 p-6 rounded-xl mb-8">
+                    <h3 class="text-xl font-bold mb-4">Investimento:</h3>
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div>
+                            <p class="text-lg"><span class="line-through opacity-70">R$ 350,00</span></p>
+                            <p class="text-3xl font-bold text-yellow-400">R$ 299,00</p>
+                            <p class="text-sm opacity-70">Até 31/12/2025 (Lote promocional)</p>
+                        </div>
+                        <div>
+                            <p class="text-lg font-medium">Inclui:</p>
+                            <ul class="list-disc list-inside opacity-80">
+                                <li>Hospedagem completa</li>
+                                <li>Todas as refeições</li>
+                                <li>Kit do acampante</li>
+                                <li>Atividades e materiais</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="cta-button px-8 py-4 rounded-full text-white font-bold text-lg flex items-center justify-center">
+                        Inscreva-se Agora
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="secondary-button px-8 py-4 rounded-full text-black font-bold text-lg flex items-center justify-center">
+                        Ir para o Pagamento
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 px-4 bg-blue-900 relative">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-4xl md:text-5xl font-bold mb-4">PERGUNTAS <span class="text-yellow-400">FREQUENTES</span></h2>
+                <p class="text-lg max-w-2xl mx-auto opacity-80">Tire suas dúvidas sobre o Acampamento 2026</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item mb-4 overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold">Qual a idade mínima para participar?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer px-4 pb-4 hidden">
+                        <p>O acampamento é destinado para jovens de 14 a 30 anos. Casos especiais podem ser analisados pela coordenação.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item mb-4 overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold">Onde será o acampamento?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer px-4 pb-4 hidden">
+                        <p>O acampamento será realizado no Recanto Vida Nova, em Presidente Epitácio - SP. O endereço completo e instruções de como chegar serão enviados após a confirmação da inscrição.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item mb-4 overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold">O que está incluso no valor?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer px-4 pb-4 hidden">
+                        <p>O valor inclui hospedagem completa (2 noites), todas as refeições (café da manhã, almoço, jantar e lanches), kit do acampante (camiseta, pulseira e materiais), e participação em todas as atividades programadas.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item mb-4 overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold">Posso parcelar o pagamento?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer px-4 pb-4 hidden">
+                        <p>Sim! Você pode parcelar em até 3x no cartão de crédito. Também aceitamos pagamento via PIX à vista com 5% de desconto.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item mb-4 overflow-hidden">
+                    <button class="faq-question w-full text-left p-4 flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span class="font-bold">O que devo levar?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer px-4 pb-4 hidden">
+                        <p>Você deve levar roupas confortáveis, itens de higiene pessoal, roupa de cama, toalha, Bíblia, caderno para anotações, lanterna, repelente e protetor solar. Uma lista completa será enviada por e-mail após a confirmação da inscrição.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 bg-blue-950">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="title-font text-3xl font-bold text-white mb-2">CASA JOVEM</h2>
+                    <p class="opacity-70">Presidente Epitácio - SP</p>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="social-icon w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 pt-8 mt-8">
+                <div class="flex flex-col md:flex-row justify-between">
+                    <div class="mb-6 md:mb-0">
+                        <p class="text-sm opacity-70">© 2025 Casa Jovem. Todos os direitos reservados.</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:space-x-8">
+                        <a href="#" class="text-sm opacity-70 hover:opacity-100 mb-2 md:mb-0">Política de Privacidade</a>
+                        <a href="#" class="text-sm opacity-70 hover:opacity-100 mb-2 md:mb-0">Termos de Uso</a>
+                        <a href="#" class="text-sm opacity-70 hover:opacity-100">Contato</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-lg font-medium">"Você não está aqui por acaso. Você foi chamado para mais."</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const targetDate = new Date('February 14, 2026 00:00:00').getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+            
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerText = days.toString().padStart(3, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('svg');
+            
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                answer.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9656857485d17a84',t:'MTc1MzU2MDQyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
