@@ -136,13 +136,6 @@
             background: rgba(255, 255, 255, 0.15);
         }
         
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
         .faq-item {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
@@ -233,6 +226,57 @@
         .handwritten-title {
             line-height: 1.4;
         }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a3d91 0%, #072a66 100%);
+        }
+        
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .play-button:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .play-icon {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 25px;
+            border-color: transparent transparent transparent #ffffff;
+            margin-left: 5px;
+        }
     </style>
 </head>
 <body>
@@ -245,7 +289,6 @@
             <div class="hidden md:flex space-x-6">
                 <a href="#sobre" class="text-white hover:text-yellow-300 transition">Sobre</a>
                 <a href="#atividades" class="text-white hover:text-yellow-300 transition">Atividades</a>
-                <a href="#depoimentos" class="text-white hover:text-yellow-300 transition">Depoimentos</a>
                 <a href="#faq" class="text-white hover:text-yellow-300 transition">FAQ</a>
             </div>
             <a href="#inscricao" class="secondary-button px-4 py-2 rounded-full text-black font-bold text-sm">Inscreva-se</a>
@@ -290,7 +333,7 @@
                     <span class="bg-yellow-400 text-blue-900 px-4 py-1 rounded-full text-sm font-bold inline-block mb-4">14 a 16 de Fevereiro 2026</span>
                 </div>
                 <h1 class="mb-4 text-white leading-tight">
-                    <span class="title-font text-5xl md:text-7xl font-extrabold block mb-2">ACAMP</span>
+                    <span class="title-font text-5xl md:text-7xl font-extrabold block mb-2">ACAMP 2026</span>
                     <div class="handwritten-title">
                         <span class="handwritten text-4xl md:text-6xl text-white block">Chamados</span>
                         <span class="handwritten text-4xl md:text-6xl text-yellow-400 block">para Mais</span>
@@ -340,8 +383,34 @@
         </div>
     </section>
 
+    <!-- Video Teaser Section -->
+    <section id="video-teaser" class="py-16 px-4 bg-blue-800">
+        <div class="container mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="mb-4">
+                    <span class="title-font text-3xl md:text-4xl font-bold block">VEJA O QUE TE ESPERA</span>
+                    <div class="mt-2">
+                        <span class="handwritten text-2xl md:text-3xl text-yellow-400">Teaser Acamp 2026</span>
+                    </div>
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto opacity-80 mb-8">Um gostinho do que você vai viver nesses três dias incríveis de transformação</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                        <p class="mt-4 font-medium">Clique para assistir</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
-    <section id="atividades" class="py-20 px-4 bg-blue-800 relative">
+    <section id="atividades" class="py-20 px-4 bg-blue-900 relative">
         <div class="container mx-auto">
             <div class="text-center mb-16">
                 <h2 class="mb-4">
@@ -399,94 +468,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="depoimentos" class="py-20 px-4 bg-blue-900 relative">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="mb-4">
-                    <span class="title-font text-4xl md:text-5xl font-bold block">VIDAS</span>
-                    <div class="mt-2">
-                        <span class="handwritten text-3xl md:text-4xl text-yellow-400">Transformadas</span>
-                    </div>
-                </h2>
-                <p class="text-lg max-w-2xl mx-auto opacity-80">Veja o que os participantes das edições anteriores têm a dizer sobre essa experiência incrível.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card p-6 relative">
-                    <svg class="absolute top-4 left-4 w-8 h-8 text-yellow-400 opacity-50" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
-                    <div class="pt-8">
-                        <p class="mb-4 italic">"Foi no acamp que eu entendi meu propósito. Nunca mais fui o mesmo depois daqueles três dias!"</p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-blue-900 font-bold">M</div>
-                            <div class="ml-3">
-                                <p class="font-bold">Mateus, 19</p>
-                                <p class="text-sm opacity-70">Participou em 2024</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card p-6 relative">
-                    <svg class="absolute top-4 left-4 w-8 h-8 text-yellow-400 opacity-50" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
-                    <div class="pt-8">
-                        <p class="mb-4 italic">"Nunca imaginei que três dias pudessem me marcar tanto. Fiz amizades que vão durar para sempre!"</p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-blue-900 font-bold">J</div>
-                            <div class="ml-3">
-                                <p class="font-bold">Julia, 17</p>
-                                <p class="text-sm opacity-70">Participou em 2025</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card p-6 relative">
-                    <svg class="absolute top-4 left-4 w-8 h-8 text-yellow-400 opacity-50" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
-                    <div class="pt-8">
-                        <p class="mb-4 italic">"O acamp mudou minha visão sobre Deus e sobre mim mesmo. Recomendo para todos os jovens!"</p>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-blue-900 font-bold">G</div>
-                            <div class="ml-3">
-                                <p class="font-bold">Gabriel, 21</p>
-                                <p class="text-sm opacity-70">Participou em 2023</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Photo Gallery -->
-            <div class="mt-16">
-                <h3 class="text-2xl font-bold mb-6 text-center">Momentos Inesquecíveis</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <!-- Using colored rectangles as placeholders for images -->
-                    <div class="aspect-square bg-gradient-to-br from-blue-700 to-blue-500 rounded-lg overflow-hidden flex items-center justify-center">
-                        <span class="text-4xl">🙏</span>
-                    </div>
-                    <div class="aspect-square bg-gradient-to-br from-yellow-500 to-yellow-300 rounded-lg overflow-hidden flex items-center justify-center">
-                        <span class="text-4xl">🎸</span>
-                    </div>
-                    <div class="aspect-square bg-gradient-to-br from-red-600 to-red-400 rounded-lg overflow-hidden flex items-center justify-center">
-                        <span class="text-4xl">🔥</span>
-                    </div>
-                    <div class="aspect-square bg-gradient-to-br from-pink-500 to-pink-300 rounded-lg overflow-hidden flex items-center justify-center">
-                        <span class="text-4xl">✨</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Registration Section -->
     <section id="inscricao" class="py-20 px-4 bg-blue-800 relative">
         <div class="container mx-auto">
@@ -510,8 +491,8 @@
                     <h3 class="text-xl font-bold mb-4">Investimento:</h3>
                     <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                         <div>
-                            <p class="text-lg"><span class="line-through opacity-70">R$ 250,00</span></p>
-                            <p class="text-3xl font-bold text-yellow-400">R$ 170,00</p>
+                            <p class="text-lg"><span class="line-through opacity-70">R$ 350,00</span></p>
+                            <p class="text-3xl font-bold text-yellow-400">R$ 299,00</p>
                             <p class="text-sm opacity-70">Até 31/12/2025 (Lote promocional)</p>
                         </div>
                         <div>
@@ -527,7 +508,7 @@
                 </div>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://forms.gle/Vou52fe9B1kS6bP28" class="cta-button px-8 py-4 rounded-full text-white font-bold text-lg flex items-center justify-center">
+                    <a href="#" class="cta-button px-8 py-4 rounded-full text-white font-bold text-lg flex items-center justify-center">
                         Inscreva-se Agora
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -725,6 +706,11 @@
                 }
             });
         });
+        
+        // Video placeholder click handler
+        document.querySelector('.play-button').addEventListener('click', function() {
+            alert('Vídeo será inserido posteriormente. Este é um espaço reservado para o teaser do acampamento.');
+        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9656c6f4962e6eb2',t:'MTc1MzU2MzEwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'965c46fea15cf19f',t:'MTc1MzYyMDc4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
