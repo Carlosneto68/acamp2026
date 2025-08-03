@@ -498,7 +498,7 @@ Porque aqui, cada noite é única! Vista-se, entre na vibe e mergulhe em experi�
                     <h3 class="text-xl font-bold mb-4">Investimento:</h3>
                     <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                         <div>
-                            <p class="text-lg"><span class="line-through opacity-70">R$ 350,00</span></p>
+                            <p class="text-lg"><span class="line-through opacity-70">R$ 250,00</span></p>
                             <p class="text-3xl font-bold text-yellow-400">R$ 150,00</p>
                             <p class="text-sm opacity-70">Até 31/01/2026 (Lote promocional)</p>
                         </div>
@@ -552,7 +552,7 @@ Porque aqui, cada noite é única! Vista-se, entre na vibe e mergulhe em experi�
                         </svg>
                     </button>
                     <div class="faq-answer px-4 pb-4 hidden">
-                        <p>O acampamento é destinado para jovens de 14 a 30 anos. Casos especiais podem ser analisados pela coordenação.</p>
+                        <p>O acampamento é destinado para jovens de 13 a 30 anos. Casos especiais podem ser analisados pela coordenação.</p>
                     </div>
                 </div>
                 
@@ -565,7 +565,7 @@ Porque aqui, cada noite é única! Vista-se, entre na vibe e mergulhe em experi�
                         </svg>
                     </button>
                     <div class="faq-answer px-4 pb-4 hidden">
-                        <p>O acampamento será realizado no Recanto Vida Nova, em Presidente Epitácio - SP. O endereço completo e instruções de como chegar serão enviados após a confirmação da inscrição.</p>
+                        <p>TESTE</p>
                     </div>
                 </div>
                 
@@ -578,7 +578,7 @@ Porque aqui, cada noite é única! Vista-se, entre na vibe e mergulhe em experi�
                         </svg>
                     </button>
                     <div class="faq-answer px-4 pb-4 hidden">
-                        <p>O valor inclui hospedagem completa (2 noites), todas as refeições (café da manhã, almoço, jantar e lanches), kit do acampante (camiseta, pulseira e materiais), e participação em todas as atividades programadas.</p>
+                        <p>O valor inclui hospedagem completa (3 noites), todas as refeições (café da manhã, almoço, jantar e café da tarde), kit do acampante, e participação em todas as atividades programadas.</p>
                     </div>
                 </div>
                 
@@ -591,7 +591,7 @@ Porque aqui, cada noite é única! Vista-se, entre na vibe e mergulhe em experi�
                         </svg>
                     </button>
                     <div class="faq-answer px-4 pb-4 hidden">
-                        <p>Sim! Você pode parcelar em até 3x no cartão de crédito. Também aceitamos pagamento via PIX à vista com 5% de desconto.</p>
+                        <p>Sim! Você pode parcelar a partir data de inscrição. Também aceitamos pagamento via PIX à vista.</p>
                     </div>
                 </div>
                 
@@ -604,7 +604,7 @@ Porque aqui, cada noite é única! Vista-se, entre na vibe e mergulhe em experi�
                         </svg>
                     </button>
                     <div class="faq-answer px-4 pb-4 hidden">
-                        <p>Você deve levar roupas confortáveis, itens de higiene pessoal, roupa de cama, toalha, Bíblia, caderno para anotações, lanterna, repelente e protetor solar. Uma lista completa será enviada por e-mail após a confirmação da inscrição.</p>
+                        <p>Você deve levar roupas confortáveis, itens de higiene pessoal, roupa de cama, toalha, Bíblia, caderno para anotações, lanterna, repelente e protetor solar. Uma lista completa será enviada por Whatsapp após a confirmação da inscrição.</p>
                     </div>
                 </div>
             </div>
