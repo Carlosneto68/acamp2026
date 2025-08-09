@@ -710,11 +710,12 @@ Porque aqui, cada noite é única! Vista-se, entre na vibe e mergulhe em experi�
             document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
             document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
         }
-        
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-        
+
+// Chama imediatamente e atualiza a cada 1 segundo
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+    
         // FAQ Toggle
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
